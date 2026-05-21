@@ -71,3 +71,41 @@ namespace ConsoleApplication1
         }
     }
 }
+
+// 2)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int numeroSecreto, contador, numero;
+            numeroSecreto = 42;
+            contador = 0;
+            Console.WriteLine("Adivina el numero secreto ");
+            do
+            {
+                Console.Write("Numero: ");
+                numero = int.Parse(Console.ReadLine());
+                if(numero<numeroSecreto)
+                {
+                    Console.WriteLine("El numero secreto es mayor");
+                }
+                else if(numero>numeroSecreto)
+                {
+                    Console.WriteLine("El numero secreto es menor");
+                }
+                contador += 1;
+            } while (numero != numeroSecreto && contador < 5);
+
+            Console.WriteLine("El numero secreto era " + numeroSecreto);
+
+        }
+    }
+}
