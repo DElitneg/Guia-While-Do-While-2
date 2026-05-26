@@ -109,3 +109,84 @@ namespace ConsoleApplication1
         }
     }
 }
+
+// 3)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int valor, ahorro, contador, mayor;
+            String respuesta;
+            ahorro = 0; contador = 0; mayor = 0;
+
+            do
+            {
+                Console.Write("Ingrese el monto de la venta: ");
+                valor = int.Parse(Console.ReadLine());
+                Console.WriteLine("Desea continuar ingresando ventas? (Y/N):");
+                respuesta = Convert.ToString(Console.ReadLine());
+                if(valor>mayor)
+                {
+                    mayor = valor;
+                }
+                contador += 1;
+                ahorro += valor;
+            } while (respuesta == "Y");
+            Console.WriteLine("El total acumulado es: " + ahorro+", hubo "+contador+" ventas, y la mayor fue de "+mayor);
+
+        }
+    }
+}
+
+// 4)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int contador; contador = 0;
+            String usuario, ahorro, mayor, contraseña;
+            String contraseñareal, usuarioreal;
+            contraseñareal = "contraseña";
+            usuarioreal = "usuario";
+            do
+            {
+                Console.Write("Ingrese nombre de Usuario: ");
+                usuario = Convert.ToString(Console.ReadLine());
+                Console.Write("Ingrese contraseña: ");
+                contraseña = Convert.ToString(Console.ReadLine());
+                contador += 1;
+                if(contraseña == contraseñareal && usuario == usuarioreal)
+                {
+                    contador = 3;
+                    Console.WriteLine("Bienvenido al sistema");
+                }
+                else if(contraseña != contraseñareal || usuario != usuarioreal)
+                {
+                    Console.WriteLine("Usuario o contraseña incorrecto");
+                }
+            } while (contador != 3);
+            if (contador == 3 && contraseña != contraseñareal)
+            {
+                Console.WriteLine("Cuenta bloqueada por seguridad");
+            }
+        }
+    }
+}
