@@ -162,7 +162,7 @@ namespace ConsoleApplication1
         {
             
             int contador; contador = 0;
-            String usuario, ahorro, mayor, contraseña;
+            String usuario, contraseña;
             String contraseñareal, usuarioreal;
             contraseñareal = "contraseña";
             usuarioreal = "usuario";
@@ -190,3 +190,55 @@ namespace ConsoleApplication1
         }
     }
 }
+
+// 5)
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            int numero, contador, negativos, positivos, ceros;
+            contador = 0; negativos = 0; ceros = 0; positivos = 0;
+            String respuesta;
+
+
+            Console.WriteLine("Ingrese numeros positivos, negativos o ceros, el programa se detendra al introducir X");
+
+            do
+            {
+                Console.Write("Numero: ");
+                numero = int.Parse(Console.ReadLine());
+                Console.Write("Continuar?: ");
+                respuesta = Convert.ToString(Console.ReadLine());
+
+                contador += 1;
+
+                if(numero > 0)
+                {
+                    positivos += 1;
+                }
+                else if(numero<0)
+                {
+                    negativos += 1;
+                }
+                else if(numero == 0)
+                {
+                    ceros += 1;
+                }
+  
+            } while (respuesta != "X");
+
+            Console.WriteLine("Positivos: " + positivos +" Negativos: "+negativos+" Ceros: "+ceros);
+                
+        }
+    }
+}
+REVERIFICAR EL 10
