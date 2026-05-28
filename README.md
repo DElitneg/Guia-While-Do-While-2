@@ -204,92 +204,35 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            
-            int numero, contador, negativos, positivos, ceros;
-            contador = 0; negativos = 0; ceros = 0; positivos = 0;
-            String respuesta;
 
-
+            int negativos, positivos, ceros, test;
+            negativos = 0; ceros = 0; positivos = 0;
+            String numero;
             Console.WriteLine("Ingrese numeros positivos, negativos o ceros, el programa se detendra al introducir X");
-
             do
             {
                 Console.Write("Numero: ");
-                numero = int.Parse(Console.ReadLine());
-                Console.Write("Continuar?: ");
-                respuesta = Convert.ToString(Console.ReadLine());
-
-                contador += 1;
-
-                if(numero > 0)
+                numero = Convert.ToString(Console.ReadLine());
+                if (numero == "X" || numero == "x")
+                {
+                    break;
+                }
+                test = Convert.ToInt32(numero);
+                if (test > 0)
                 {
                     positivos += 1;
                 }
-                else if(numero<0)
+                else if (test < 0)
                 {
                     negativos += 1;
                 }
-                else if(numero == 0)
+                else if (test == 0)
                 {
                     ceros += 1;
-                }
-  
-            } while (respuesta != "X");
-
-            Console.WriteLine("Positivos: " + positivos +" Negativos: "+negativos+" Ceros: "+ceros);
-                
-        }
-    }
-}
-REVERIFICAR EL 5
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ConsoleApplication1
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-
-            int numero, contador, negativos, positivos, ceros;
-            contador = 0; negativos = 0; ceros = 0; positivos = 0;
-            String respuesta;
-
-
-            Console.WriteLine("Ingrese numeros positivos, negativos o ceros, el programa se detendra al introducir X");
-
-            do
-            {
-                Console.Write("Numero: ");
-                numero = int.Parse(Console.ReadLine());
-
-                contador += 1;
-
-                if (numero > 0)
-                {
-                    positivos += 1;
-                }
-                else if (numero < 0)
-                {
-                    negativos += 1;
-                }
-                else if (numero == 0)
-                {
-                    ceros += 1;
-                }
-
-                respuesta = numero.ToString();
-
-            } while (respuesta != "X");
-
+                }               
+            } while (numero != "X");
             Console.WriteLine("Positivos: " + positivos + " Negativos: " + negativos + " Ceros: " + ceros);
 
         }
     }
 }
-el 5 no funciona
