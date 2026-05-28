@@ -242,3 +242,54 @@ namespace ConsoleApplication1
     }
 }
 REVERIFICAR EL 5
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int numero, contador, negativos, positivos, ceros;
+            contador = 0; negativos = 0; ceros = 0; positivos = 0;
+            String respuesta;
+
+
+            Console.WriteLine("Ingrese numeros positivos, negativos o ceros, el programa se detendra al introducir X");
+
+            do
+            {
+                Console.Write("Numero: ");
+                numero = int.Parse(Console.ReadLine());
+
+                contador += 1;
+
+                if (numero > 0)
+                {
+                    positivos += 1;
+                }
+                else if (numero < 0)
+                {
+                    negativos += 1;
+                }
+                else if (numero == 0)
+                {
+                    ceros += 1;
+                }
+
+                respuesta = numero.ToString();
+
+            } while (respuesta != "X");
+
+            Console.WriteLine("Positivos: " + positivos + " Negativos: " + negativos + " Ceros: " + ceros);
+
+        }
+    }
+}
+el 5 no funciona
